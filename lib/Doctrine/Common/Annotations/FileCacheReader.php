@@ -99,6 +99,7 @@ class FileCacheReader implements Reader
 
         if ($this->debug
             && (false !== $filename = $class->getFilename())
+            && file_exists($filename)
             && filemtime($path) < filemtime($filename)) {
             @unlink($path);
 
@@ -137,6 +138,7 @@ class FileCacheReader implements Reader
 
         if ($this->debug
             && (false !== $filename = $class->getFilename())
+            && file_exists($filename)
             && filemtime($path) < filemtime($filename)) {
             unlink($path);
 
@@ -175,6 +177,7 @@ class FileCacheReader implements Reader
 
         if ($this->debug
             && (false !== $filename = $class->getFilename())
+            && file_exists($filename)
             && filemtime($path) < filemtime($filename)) {
             unlink($path);
 
